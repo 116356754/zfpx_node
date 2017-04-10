@@ -1,0 +1,26 @@
+------WebKitFormBoundaryjhiaHjJb3bGCzCHy
+Content-Disposition: form-data; name="username"
+
+汪开元
+------WebKitFormBoundaryjhiaHjJb3bGCzCHy
+Content-Disposition: form-data; name="email"
+
+116356754@qq.com
+------WebKitFormBoundaryjhiaHjJb3bGCzCHy
+Content-Disposition: form-data; name="avatar"; filename="周报.txt"
+Content-Type: text/plain
+
+﻿本周工作：
+    一、electron 1.2.5版本提供了webview的触发重置大小的api；同时增加了webview的一个遮罩属性
+以便可以载入外面引入的遮罩页面。
+    二、对原有的websocket组件ws进行稳定性测试，同时也更新了ws组件。
+    三、对原有的ws组件封装，实现了基于主进程连接，其他渲染进程进行定义title，主进程根据title对
+渲染进行进行分发，并在页面跳转、崩溃和关闭的情况下自动取消订阅的功能。
+下周计划：
+    研究1.6.2版本的electron最新代码，尝试升级。
+
+------WebKitFormBoundaryjhiaHjJb3bGCzCHy
+Content-Disposition: form-data; name="提交"
+
+提交
+------WebKitFormBoundaryjhiaHjJb3bGCzCHy--

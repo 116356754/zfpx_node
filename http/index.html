@@ -7,11 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/post" method="post" enctype="multiple">
+    <h4>post 表单</h4>
+    <form action="/post" method="post" enctype="application/x-www-form-urlencoded">
         <input type="text" name="username" />
+        <input type="text" name="email" />
+        <input type="submit" name="提交" />
+    </form>
+    <h4>post 文件</h4>
+     <form action="/file" method="post" enctype="multipart/form-data">
+        <input type="text" name="username" />
+        <input type="text" name="email" />
         <input type="file" name="avatar" />
         <input type="submit" name="提交" />
     </form>
+    <h4>get 请求</h4>
      <form action="/get" method="get" >
         <input type="text" name="username" />
         <input type="text" name="email" />
