@@ -37,7 +37,11 @@ app.get('/home', function(req, res) {
         res.send('欢迎你' + req.session.name);
     else
         res.send('请登录')
+});
 
+app.get('/logout', function(req, res) {
+    req.session.name = null;
+    res.end('退出登录')
 });
 
 app.listen(8080)
