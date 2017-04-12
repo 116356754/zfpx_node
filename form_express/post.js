@@ -3,10 +3,13 @@ var express = require('express');
 var serverStatic = require('serve-static');
 
 var bodyParser = require('body-parser');
+var multer = require('multer');
+var mime = require('mime');
 var url = require('url')
 var path = require('path');
 var fs = require('fs');
 
+//var upload = multer({ dest: 'uploads/' })
 var app = express();
 
 app.set('view engine', 'html')
@@ -30,8 +33,16 @@ app.param('uid', function(req, res, next) {
     }
     next();
 });
-app.use('/user/add', function(req, res) {
-    users.push(req.body)
+app.post('/user/add', multer().single('avatar'), function(req, res) {
+    users.push(req.body);
+    console.log(req.file);
+    fs.createWriteStream(req.file.originalname)
+    fs.writeFile(req.file.originalname, req.file.buffer, function(err) {
+        if (!err)
+            console.log('sava avatar success')
+        else
+            console.error(err);
+    })
     res.json(req.body);
 })
 
