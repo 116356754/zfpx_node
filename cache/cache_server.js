@@ -5,7 +5,7 @@ function expireHandler(filename,req,res){
     fs.readFile(filename,function(err,content){
         var expires = new Date(new Date().getTime()+30*1000);
         res.setHeader('Expires',expires.toUTCString());
-        res.setHeader('Cache-Control','max-age=60');
+        res.setHeader('Cache-Control','max-age=60');//兼容http1.0协议的缓存
         res.writeHeader(200,'ok');
         res.end(content);
     })    
